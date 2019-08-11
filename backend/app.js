@@ -14,7 +14,9 @@ mongoose.set('useCreateIndex', true);
 
 mongoose
   .connect(
-    'mongodb+srv://rajdatheist:51S6YEvVe3YLFuzM@cluster0-ucmha.mongodb.net/mean?retryWrites=true&w=majority',
+    'mongodb+srv://rajdatheist:' +
+      process.env.MONGO_ATLAS_PASSWORD +
+      '@cluster0-ucmha.mongodb.net/mean?retryWrites=true&w=majority',
     { useNewUrlParser: true }
   )
   .then(() => {
